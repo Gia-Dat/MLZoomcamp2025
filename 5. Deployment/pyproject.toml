@@ -17,7 +17,3 @@ dev = [
     "requests>=2.32.5",
 ]
 
-[tool.uv.workspace]
-members = [
-    "Homework 5",
-]

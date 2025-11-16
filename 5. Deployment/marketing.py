@@ -1,6 +1,7 @@
 import requests
 
-url = 'http://localhost:9696/predict'
+# url = 'http://localhost:9696/predict'
+url = 'https://churn-deploy.fly.dev/predict'
 
 customer = {
     'gender': 'female',
