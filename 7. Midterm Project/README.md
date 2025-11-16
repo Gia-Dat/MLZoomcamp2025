@@ -35,5 +35,5 @@ dataset link "https://www.kaggle.com/datasets/geomack/spotifyclassification"
   - flyctl deploy
 
 Then I have a link and put it in marketing.py
-with "/predict" after that link:
+with "/predict" after that link, and the final link to my deployment:
 https://favorite-song-prediction.fly.dev/predict
