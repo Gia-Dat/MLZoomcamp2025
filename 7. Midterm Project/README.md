@@ -37,3 +37,6 @@ dataset link "https://www.kaggle.com/datasets/geomack/spotifyclassification"
 Then I have a link and put it in marketing.py
 with "/predict" after that link, and the final link to my deployment:
 https://favorite-song-prediction.fly.dev/predict
+
+<img width="2559" height="1360" alt="image" src="https://github.com/user-attachments/assets/4d6f8203-c352-4d74-9b53-9c94c6bc00ae" />
+
