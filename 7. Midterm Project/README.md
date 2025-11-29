@@ -19,21 +19,24 @@ dataset link "https://www.kaggle.com/datasets/geomack/spotifyclassification"
 
 ### Create environment
 - Then for dependencies and environment: I run these code
-uv init
-rm main.py
-uv add scikit-learn fastapi uvicorn
-uv add --dev requests
-uv sync
+  - uv init
+  - rm main.py
+  - uv add scikit-learn fastapi uvicorn
+  - uv add --dev requests
+  - uv sync
 
 ### Containerization
 - After that I create a Dockerfile (see in my Dockerfile), build it: docker build -t predict-churn .
 
 ### Cloud deployment
 - For cloud deployment I used Fly.io, I used Windows so that these are my code:
-flyctl auth login
-flyctl launch
-flyctl deploy
+  - flyctl auth login
+  - flyctl launch
+  - flyctl deploy
 
 Then I have a link and put it in marketing.py
-with "/predict" after that link:
+with "/predict" after that link, and the final link to my deployment:
 https://favorite-song-prediction.fly.dev/predict
+
+<img width="2559" height="1360" alt="image" src="https://github.com/user-attachments/assets/4d6f8203-c352-4d74-9b53-9c94c6bc00ae" />
+
