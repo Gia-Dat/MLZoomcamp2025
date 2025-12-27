@@ -17,7 +17,7 @@ print(f'sklearn=={sklearn.__version__}')
 
 def load_data():
     df = pd.read_csv(
-        r"C:\Users\GIA DAT\ML Zoomcamp\3. Classification\WA_Fn-UseC_-Telco-Customer-Churn.csv")
+        "https://raw.githubusercontent.com/alexeygrigorev/mlbookcamp-code/master/chapter-03-churn-prediction/WA_Fn-UseC_-Telco-Customer-Churn.csv")
 
     df.columns = df.columns.str.lower().str.replace(' ', '_')
 
