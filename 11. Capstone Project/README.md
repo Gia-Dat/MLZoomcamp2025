@@ -25,7 +25,7 @@ Run the code 3 times for train, validation, test parts (all in data folder)
 
 ### EDA:
 
-We can see there are 10 categories of animals with a lot of variation:![alt text](./image.png)
+We can see there are 10 categories of animals with a lot of variation:![alt text](img/image.png)
 
 ### Model Training:
 
@@ -110,11 +110,11 @@ Go to the http://localhost:8080/docs#/default/predict_predict_post
 
 - Replace the string with the link https://cataas.com/cat (URL for cat images)
 
-=> the responses: ![alt text](./image-1.png)
+=> the responses: ![alt text](img/image-1.png)
 
 - or using `python marketing.py`
 
-=> ![alt text](./image-2.png)
+=> ![alt text](img/image-2.png)
 
 
 
