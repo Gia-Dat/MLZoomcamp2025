@@ -25,7 +25,7 @@ Run the code 3 times for train, validation, test parts (all in data folder)
 
 ### EDA:
 
-We can see there are 10 categories of animals with a lot of variation:![alt text](image.png)
+We can see there are 10 categories of animals with a lot of variation:![alt text](./image.png)
 
 ### Model Training:
 
@@ -51,18 +51,27 @@ Send the requests to API and then receive the prediction
 Requirements: kubectl, kind, uv
 
 `kind create cluster --name animalclassification`
+
 _Building FastAPI Service:_
+
 `uv init`
+
 `rm main.py`
+
 _Add Dependencies:_
+
 `uv add fastapi uvicorn onnxruntime keras-image-helper numpy torch torchvision requests`
+
 _Test Locally:_
+
 `uv run uvicorn predict:app --host 0.0.0.0 --port 8080 --reload`
+
 Open http://localhost:8080/docs to see the API documentation.
 
 _Docker Containerization:_
 
 Create the Dockerfile (use given) and build: `docker build -t animal-classifier .`
+
 Run it: `docker run -it --rm -p 8080:8080 animal-classifier`
 
 In another terminal test: `python marketing.py`
@@ -72,27 +81,40 @@ _Loading image to Kind:_ `kind load docker-image animal-classifier --name animal
 ### Deployment:
 
 Create folder for all config files:
+
 `mkdir k8s`
+
 `cd k8s`
 
 Create deployment.yaml, service.yaml: (in k8s folder)
 
 Deploy it:
+
 `kubectl apply -f deployment.yaml`
+
 `kubectl apply -f service.yaml`
 
 Checking:
+
 `kubectl get deployments`
+
 `kubectl get services`
 
 _Testing Deployed Service:_
+
 `kubectl port-forward service/animal-classifier-service 8080:80`
 
 So now we can use it: 
+
 Go to the http://localhost:8080/docs#/default/predict_predict_post
-Replace the string with the link https://cataas.com/cat (URL for cat images)
-=> the responses: ![alt text](image-1.png)
-or using `python marketing.py` => ![alt text](image-2.png)
+
+- Replace the string with the link https://cataas.com/cat (URL for cat images)
+
+=> the responses: ![alt text](./image-1.png)
+
+- or using `python marketing.py`
+
+=> ![alt text](./image-2.png)
 
 
 
