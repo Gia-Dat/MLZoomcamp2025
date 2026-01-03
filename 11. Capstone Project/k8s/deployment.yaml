@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: animal-classifier-deployment
+  labels:
+    app: animal-classifier
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: animal-classifier
+  template:
+    metadata:
+      labels:
+        app: animal-classifier
+    spec:
+      containers:
+      - name: animal-classifier
+        image: animal-classifier:latest
+        imagePullPolicy: IfNotPresent  # Crucial for Kind to use local images
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1024Mi"
+            cpu: "1000m"
